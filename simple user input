@@ -1,0 +1,4 @@
+name=input("enter name: ")
+city=input("where do you live?: ")
+
+print("Hi,", name, "You are from", city)
