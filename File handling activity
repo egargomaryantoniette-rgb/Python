@@ -1,0 +1,29 @@
+while True:
+    print("TEXT MESSAGES MENU")
+    print("1. Send a message")
+    print("2. View messages")
+    print("3. Exit program")
+
+    choice = input("Enter choice: ")
+
+    if choice == "1":
+        with open("messages.txt", "x") as file:
+            message = input("Enter message: ")
+            file.write(message)
+        print("Message saved!")
+
+    elif choice == "2":
+        try:
+            with open("messages.txt", "r") as file:
+                content = file.read()
+                print("\nSaved Message:")
+                print(content)
+        except FileNotFoundError:
+            print("File not found.")
+
+    elif choice == "3":
+        print("Exit success.")
+        break
+
+    else:
+        print("Invalid choice.")
